@@ -1,4 +1,5 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "./LandingPage.css";
 
 const LandingPage = () => {
@@ -22,12 +23,44 @@ const LandingPage = () => {
     { name: "Email", url: "mailto:bhavyathashetty@gmail.com", icon: "em" },
   ];
 
+  const location = useLocation();
+  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
+
+  useEffect(() => {
+    setMobileNavOpen(false);
+  }, [location.pathname]);
+
   return (
     <div className="landing-container">
       {/* Navigation */}
       <nav className="navbar">
         <div className="nav-content">
           <div className="logo">BS</div>
+          <div className="mobile-nav">
+            <button
+              type="button"
+              className="mobile-nav-toggle"
+              aria-expanded={isMobileNavOpen}
+              onClick={() => setMobileNavOpen((prev) => !prev)}
+            >
+              <span className="hamburger-icon">☰</span>
+            </button>
+            <div className={`mobile-nav-dropdown ${isMobileNavOpen ? "open" : ""}`}>
+              <ul className="mobile-nav-list">
+                {navItems.map((item) => (
+                  <li key={item.id}>
+                    <Link
+                      to={item.path}
+                      className="mobile-nav-item"
+                      onClick={() => setMobileNavOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
           <ul className="nav-links">
             {navItems.map((item) => (
               <li key={item.id}>
@@ -299,7 +332,7 @@ const Contact = () => {
             <h3>Connect With Me</h3>
             <div className="social-links-grid">
               <a
-                href="https://linkedin.com/in/bhavyatha-shetty"
+                href="https://www.linkedin.com/in/bhavyathashetty/"
                 className="social-link-card"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -308,7 +341,7 @@ const Contact = () => {
                 <span>LinkedIn</span>
               </a>
               <a
-                href="https://github.com/bhavyatha-shetty"
+                href="https://github.com/bhavyathashetty"
                 className="social-link-card"
                 target="_blank"
                 rel="noopener noreferrer"
