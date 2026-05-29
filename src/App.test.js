@@ -1,8 +1,15 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Home from './pages/Home';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+jest.mock('react-router-dom', () => ({
+  Link: ({ children, to, ...props }) => (
+    <a href={to} {...props}>
+      {children}
+    </a>
+  ),
+}), { virtual: true });
+
+test('renders portfolio home page', () => {
+  render(<Home />);
+  expect(screen.getByRole('heading', { name: /bhavyatha shetty/i })).toBeInTheDocument();
 });
