@@ -102,8 +102,9 @@ export const blogPosts = [
 export const certificatePosts = [
   {
     id: 1,
-    title: "In progress!",
-    date: "May 4, 2026",
-    excerpt: "....",
+    title: "Introduction to OpenAI Codex",
+    date: "May 30, 2026",
+    issuer: "LinkedIn",
+    url: "https://coursera.org/share/e340cbfc6c6af8e16e7d22e7fc070a16",
   },
 ];
