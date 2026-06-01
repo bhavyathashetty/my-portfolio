@@ -10,7 +10,17 @@ const Certificates = () => {
           <article className="post-card" key={post.id}>
             <p className="meta-line">{post.date}</p>
             <h2>{post.title}</h2>
-            <p>{post.excerpt}</p>
+            {post.issuer && <p>{post.issuer}</p>}
+            {post.url && (
+              <a
+                className="text-button"
+                href={post.url}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View certificate
+              </a>
+            )}
           </article>
         ))}
       </div>
