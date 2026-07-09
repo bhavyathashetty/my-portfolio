@@ -2,10 +2,10 @@ import PageTitle from "../components/PageTitle";
 import { profile } from "../data/portfolioData";
 
 const aboutHighlights = [
-  "🌍 I love traveling and exploring new places",
-  "🍜 Food enthusiast — always excited to try new cuisines",
-  "📸 Capturing moments and experiences",
-  "🎧 Listening to music while thinking about the next build"
+  "I love traveling and exploring new places",
+  "Food enthusiast, always excited to try new cuisines",
+  "Capturing moments and experiences",
+  "Listening to music while thinking about the next build"
 ];
 
 const About = () => {
@@ -18,7 +18,7 @@ const About = () => {
         </PageTitle>
 
         <div className="portrait-wrap large">
-          <img src={`${process.env.PUBLIC_URL}/my-logo.jpg`} alt={profile.name} />
+          <img src="/my-logo.jpg" alt={profile.name} />
         </div>
       </section>
 
