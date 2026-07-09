@@ -18,7 +18,7 @@ const About = () => {
         </PageTitle>
 
         <div className="portrait-wrap large">
-          <img src={`${process.env.PUBLIC_URL}/my-logo.jpg`} alt={profile.name} />
+          <img src="/my-logo.jpg" alt={profile.name} />
         </div>
       </section>
 

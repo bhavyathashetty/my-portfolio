@@ -18,7 +18,7 @@ const Home = () => {
         </div>
       </div>
       <div className="portrait-wrap" aria-label={profile.name}>
-        <img src={`${process.env.PUBLIC_URL}/my-logo.jpg`} alt={profile.name} />
+        <img src="/my-logo.jpg" alt={profile.name} />
       </div>
     </section>
   );
