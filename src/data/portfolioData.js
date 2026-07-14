@@ -32,6 +32,8 @@ export const profile = {
   location: "Nashville, Tennessee",
   email: "bhavyathashetty@gmail.com",
   phone: "+1 (629) 275-4340",
+  pronunciation: "BHA-vya-tha SHET-tee",
+  pronunciationGuide: "Bhavyatha is pronounced in three parts: BHA, vya, tha.",
   intro:
     "Building beautiful and functional web applications with React, Node.js, and modern technologies",
   aboutLead:
