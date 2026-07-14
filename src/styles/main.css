@@ -932,6 +932,214 @@ textarea {
   margin-bottom: 0;
 }
 
+.journey-map {
+  border-top: 1px solid var(--color-line);
+  padding: 54px 0 46px;
+}
+
+.journey-map-header {
+  align-items: end;
+  display: grid;
+  gap: 42px;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(300px, 1.2fr);
+  margin-bottom: 46px;
+}
+
+.journey-map-header h2 {
+  color: var(--color-ink);
+  font-size: 3.25rem;
+  font-weight: 800;
+  line-height: 1.08;
+  margin: 0;
+  text-transform: lowercase;
+}
+
+.journey-map-header > p {
+  color: var(--color-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.journey-roadmap {
+  counter-reset: journey-step;
+  display: grid;
+  gap: 30px 26px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.journey-roadmap::before {
+  background:
+    linear-gradient(90deg, var(--color-sky), var(--color-honey) 34%, var(--color-grass) 68%, var(--color-coral)),
+    repeating-linear-gradient(90deg, transparent 0 20px, rgba(255, 255, 255, 0.62) 20px 30px);
+  border-radius: 999px;
+  box-shadow: var(--shadow-inset);
+  content: "";
+  height: 18px;
+  left: 7%;
+  position: absolute;
+  right: 7%;
+  top: 44px;
+  z-index: 0;
+}
+
+.roadmap-stop {
+  counter-increment: journey-step;
+  display: grid;
+  gap: 18px;
+  grid-template-rows: 86px 1fr;
+  position: relative;
+  z-index: 1;
+}
+
+.roadmap-stop:nth-child(even) {
+  margin-top: 72px;
+}
+
+.roadmap-pin {
+  align-items: center;
+  align-self: start;
+  background: var(--color-white);
+  border-radius: 50%;
+  box-shadow:
+    var(--shadow-inset),
+    0 14px 26px rgba(15, 48, 53, 0.08);
+  color: var(--color-ink);
+  display: flex;
+  height: 86px;
+  justify-content: center;
+  justify-self: center;
+  position: relative;
+  width: 86px;
+}
+
+.roadmap-pin::before {
+  background: var(--color-sky);
+  border-radius: 50%;
+  content: "";
+  inset: 11px;
+  position: absolute;
+}
+
+.roadmap-pin::after {
+  background: var(--color-white);
+  border-radius: 50%;
+  content: counter(journey-step);
+  display: grid;
+  font-size: 0.76rem;
+  font-weight: 800;
+  height: 24px;
+  place-items: center;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 24px;
+}
+
+.roadmap-pin span {
+  font-size: 1rem;
+  font-weight: 800;
+  position: relative;
+  z-index: 1;
+}
+
+.roadmap-pin.honey::before {
+  background: var(--color-honey);
+}
+
+.roadmap-pin.grass::before {
+  background: var(--color-grass);
+}
+
+.roadmap-pin.coral::before {
+  background: var(--color-coral);
+}
+
+.roadmap-card {
+  background: var(--color-white);
+  border-radius: 10px;
+  box-shadow: var(--shadow-inset);
+  min-height: 284px;
+  padding: 28px 26px;
+  position: relative;
+  transition:
+    box-shadow var(--motion-medium) var(--motion-ease),
+    transform var(--motion-medium) var(--motion-ease);
+}
+
+.roadmap-card::before {
+  background: var(--color-sand-surface);
+  border-radius: 999px;
+  content: "";
+  height: 8px;
+  left: 26px;
+  position: absolute;
+  top: 20px;
+  width: 52px;
+}
+
+.roadmap-card h3,
+.travel-note h3 {
+  color: var(--color-ink);
+  font-size: 1.32rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 12px 0 10px;
+}
+
+.roadmap-card p:last-child,
+.travel-note p:last-child {
+  color: var(--color-body);
+  font-size: 0.98rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.roadmap-place {
+  color: var(--color-muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.45;
+  margin: 0 0 18px;
+}
+
+.roadmap-card:hover,
+.travel-note:hover {
+  box-shadow: var(--shadow-soft);
+  transform: translateY(-3px);
+}
+
+.travel-note {
+  background:
+    linear-gradient(135deg, rgba(100, 198, 255, 0.14), transparent 36%),
+    var(--color-white);
+  border-radius: 10px;
+  box-shadow: var(--shadow-inset);
+  margin-top: 34px;
+  max-width: 680px;
+  padding: 30px 32px;
+  position: relative;
+  transition:
+    box-shadow var(--motion-medium) var(--motion-ease),
+    transform var(--motion-medium) var(--motion-ease);
+}
+
+.travel-note::before {
+  background:
+    linear-gradient(90deg, var(--color-coral), var(--color-sky));
+  border-radius: 999px;
+  content: "";
+  height: 10px;
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  width: 86px;
+}
+
 .contact-layout {
   border-top: 1px solid var(--color-line);
   display: grid;
@@ -1096,6 +1304,7 @@ textarea {
   .split-hero,
   .timeline-item,
   .contact-layout,
+  .journey-map-header,
   .pronunciation-section {
     grid-template-columns: 1fr;
   }
@@ -1113,7 +1322,8 @@ textarea {
 
   .about-highlights h2,
   .content-section h2,
-  .pronunciation-section h2 {
+  .pronunciation-section h2,
+  .journey-map-header h2 {
     font-size: 2.8rem;
   }
 
@@ -1137,6 +1347,35 @@ textarea {
 
   .about-highlight-grid {
     grid-template-columns: 1fr;
+  }
+
+  .journey-map-header {
+    align-items: start;
+    gap: 22px;
+  }
+
+  .journey-roadmap {
+    grid-template-columns: 1fr;
+  }
+
+  .journey-roadmap::before {
+    bottom: 0;
+    height: auto;
+    left: 42px;
+    right: auto;
+    top: 42px;
+    width: 18px;
+  }
+
+  .roadmap-stop,
+  .roadmap-stop:nth-child(even) {
+    grid-template-columns: 86px 1fr;
+    grid-template-rows: auto;
+    margin-top: 0;
+  }
+
+  .roadmap-card {
+    min-height: 230px;
   }
 
   .footer-inner {
@@ -1178,7 +1417,8 @@ textarea {
 
   .about-highlights h2,
   .content-section h2,
-  .pronunciation-section h2 {
+  .pronunciation-section h2,
+  .journey-map-header h2 {
     font-size: 2.35rem;
   }
 
@@ -1197,6 +1437,50 @@ textarea {
 
   .pronunciation-card .name-pronunciation {
     font-size: 1.45rem;
+  }
+
+  .journey-map {
+    padding: 46px 0 52px;
+  }
+
+  .journey-roadmap {
+    gap: 14px;
+    grid-template-columns: 1fr;
+  }
+
+  .journey-roadmap::before {
+    left: 34px;
+    top: 34px;
+  }
+
+  .roadmap-stop,
+  .roadmap-stop:nth-child(even) {
+    gap: 14px;
+    grid-template-columns: 70px 1fr;
+  }
+
+  .roadmap-pin {
+    height: 70px;
+    width: 70px;
+  }
+
+  .roadmap-pin span {
+    font-size: 0.88rem;
+  }
+
+  .roadmap-card {
+    min-height: auto;
+    padding: 26px 24px;
+  }
+
+  .travel-note {
+    padding: 28px 24px;
+  }
+
+  .travel-note::before {
+    position: static;
+    display: block;
+    margin-bottom: 22px;
   }
 
   .cloud-one {

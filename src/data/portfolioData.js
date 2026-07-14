@@ -72,15 +72,15 @@ export const experience = [
 export const skills = [
   {
     category: "Languages",
-    items: ["TypeScript", "JavaScript", "Python"],
+    items: [ "JavaScript","TypeScript", "Python","HTML","CSS"],
   },
   {
     category: "Frontend",
-    items: ["React", "HTML", "CSS"],
+    items: [ "React", "NextJS", "Material UI", "Tailwind CSS"],
   },
   {
     category: "Backend",
-    items: ["Node.js"],
+    items: ["NodeJS", "ExpressJS", "REST APIs"],
   },
   {
     category: "Databases",
@@ -108,5 +108,12 @@ export const certificatePosts = [
     date: "May 30, 2026",
     issuer: "LinkedIn",
     url: "https://coursera.org/share/e340cbfc6c6af8e16e7d22e7fc070a16",
+  },
+   {
+    id: 2,
+    title: "Python for Everybody Specialization,",
+    date: "August 10, 2020",
+    issuer: "LinkedIn",
+    url: "https://www.coursera.org/account/accomplishments/specialization/XLQYUHEWQW33",
   },
 ];
