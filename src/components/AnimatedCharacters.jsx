@@ -3,14 +3,12 @@ const characters = [
   { type: "cloud", className: "cloud-two" },
   { type: "cloud", className: "cloud-three" },
   { type: "cloud", className: "cloud-four" },
-  { type: "fish", className: "fish-one" },
-  { type: "fish", className: "fish-two" },
-  { type: "fish", className: "fish-three" },
-  { type: "fish", className: "fish-four" },
-  { type: "palm", className: "palm-one" },
-  { type: "palm", className: "palm-two" },
-  { type: "palm", className: "palm-three" },
-  { type: "palm", className: "palm-four" },
+  { type: "bulb", className: "bulb-one" },
+  { type: "bulb", className: "bulb-two" },
+  { type: "code", className: "code-one" },
+  { type: "code", className: "code-two" },
+  { type: "terminal", className: "terminal-one" },
+  { type: "terminal", className: "terminal-two" },
 ];
 
 const AnimatedCharacters = () => {
@@ -31,27 +29,32 @@ const AnimatedCharacters = () => {
             </>
           )}
 
-          {character.type === "fish" && (
+          {character.type === "bulb" && (
             <>
-              <span className="fish-tail" />
-              <span className="fish-fin top" />
-              <span className="fish-fin bottom" />
-              <span className="fish-body" />
-              <span className="fish-gill" />
-              <span className="fish-eye" />
+              <span className="bulb-glow" />
+              <span className="bulb-rays" />
+              <span className="bulb-dome" />
+              <span className="bulb-base" />
             </>
           )}
 
-          {character.type === "palm" && (
+          {character.type === "code" && (
             <>
-              <span className="coconut coconut-one" />
-              <span className="coconut coconut-two" />
-              <span className="palm-leaf leaf-one" />
-              <span className="palm-leaf leaf-two" />
-              <span className="palm-leaf leaf-three" />
-              <span className="palm-leaf leaf-four" />
-              <span className="palm-leaf leaf-five" />
-              <span className="palm-trunk" />
+              <span className="code-mark left" />
+              <span className="code-slash" />
+              <span className="code-mark right" />
+            </>
+          )}
+
+          {character.type === "terminal" && (
+            <>
+              <span className="terminal-bar" />
+              <span className="terminal-dot dot-one" />
+              <span className="terminal-dot dot-two" />
+              <span className="terminal-dot dot-three" />
+              <span className="terminal-prompt" />
+              <span className="terminal-line line-one" />
+              <span className="terminal-line line-two" />
             </>
           )}
         </span>
