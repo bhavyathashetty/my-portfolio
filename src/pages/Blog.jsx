@@ -32,7 +32,7 @@ const developerJourney = [
   {
     period: "Now",
     label: "AI",
-    title: "Exploring AI from Nashville",
+    title: "Exploring AI ",
     place: "Current direction",
     description:
       "Currently in Nashville, exploring how AI can make technology more useful, adaptive, and human-centered.",
