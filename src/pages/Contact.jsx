@@ -44,21 +44,6 @@ const Contact = () => {
           </div>
         </div>
 
-        <form className="contact-form">
-          <label>
-            Name
-            <input type="text" placeholder="Your name" />
-          </label>
-          <label>
-            Email
-            <input type="email" placeholder="your@email.com" />
-          </label>
-          <label>
-            Message
-            <textarea rows="5" placeholder="Tell me about your project or just say hello!" />
-          </label>
-          <button type="submit">send message</button>
-        </form>
       </section>
     </div>
   );

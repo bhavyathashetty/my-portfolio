@@ -117,3 +117,13 @@ export const certificatePosts = [
     url: "https://www.coursera.org/account/accomplishments/specialization/XLQYUHEWQW33",
   },
 ];
+
+export const badgePosts = [
+  {
+    id: 1,
+    title: "Agentic AI - POC to Production on AWS [New Cohort] · Week 1: Anatomy of an AI Agent",
+    date: "August 23, 2026",
+    issuer: "BeSA",
+    url: "https://besa.techexpert.io/badge/bhavyathashetty71872/780",
+  },
+];
